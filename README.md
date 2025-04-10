@@ -1,6 +1,6 @@
 ### Guia dos arquivos em `/docs`
 
-- [`prompt.md`✨✨✨](./docs/prompt.md)  
+- [`prompt.md ✨✨✨`](./docs/prompt.md)  
   Engenharia de prompt para converter texto para o formato BDD. 
 
 - [`notes.md`](./docs/notes.md)  
