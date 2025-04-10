@@ -6,7 +6,7 @@
 - [`notes.md`](./docs/notes.md)  
   Resumo dos conceitos básicos sobre o BDD.
 
-- [`exemple.md`](./docs/exemple.md)  
+- [`example.md`](./docs/example.md)  
   Exemplo de BDD.
 
 ---
