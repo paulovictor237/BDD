@@ -1,3 +1,17 @@
+### Guia dos arquivos em `/docs`
+
+- [`prompt.md`✨✨✨](./docs/prompt.md)  
+  Engenharia de prompt para converter texto para o formato BDD. 
+
+- [`notes.md`](./docs/notes.md)  
+  Resumo dos conceitos básicos sobre o BDD.
+
+- [`exemple.md`](./docs/exemple.md)  
+  Exemplo de BDD.
+
+---
+
+
 ### Manual de Orientações para BDD
 
 **Introdução**  
