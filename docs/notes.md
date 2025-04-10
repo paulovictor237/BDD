@@ -24,3 +24,18 @@ Descrevem as ações que serão validadas. Eles devem conter passos lógicos e s
 - **DADO QUE**: Define a pré-condição do cenário.
 - **QUANDO**: Descreve a ação do usuário.
 - **ENTÃO**: Define o resultado esperado da ação.
+
+## Resumo
+
+```
+História de Usuário
+EU COMO
+QUERO
+PARA
+
+Critérios de Aceitação
+Cenário 01 -
+DADO QUE
+QUANDO
+ENTÃO
+```

@@ -96,7 +96,7 @@
 
 ---
 
-## Forçar Liberação com `force_enable_contract`
+## Forçar Liberação com force_enable_contract
 
 ### História de Usuário
 
