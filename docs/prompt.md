@@ -12,8 +12,8 @@ Converta o texto fornecido abaixo para o formato BDD (Behavior-Driven Developmen
 **Base URL:** [Inserir URL base da aplicação]  
 **Páginas:**
 
-- [Nome da Página 1]: [URL 1]
-- [Nome da Página 2]: [URL 2]
+- [Nome da Página 1]: [Base_url/URL_1]
+- [Nome da Página 2]: [Base_url/URL_2]
 
 ### # Contexto
 
@@ -63,7 +63,7 @@ Converta o texto fornecido abaixo para o formato BDD (Behavior-Driven Developmen
 
 ## Exemplo de Saída:
 
-```markdown
+```
 # [Nome do Recurso/Funcionalidade]
 
 ### Links Relacionados
@@ -71,8 +71,8 @@ Converta o texto fornecido abaixo para o formato BDD (Behavior-Driven Developmen
 **Base URL:** https://staging-academy-px.motoristapx.vercel.app  
 **Páginas:**
 
-- [Criação de Contrato]: /contracts/new
-- [Histórico de Contratos]: /contracts/history
+- Criação de Contrato: https://staging-academy-px.motoristapx.vercel.app/contracts/new
+- Histórico de Contratos: https://staging-academy-px.motoristapx.vercel.app/contracts/history
 
 ### # Contexto
 
