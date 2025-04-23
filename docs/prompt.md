@@ -56,8 +56,16 @@ Converta o texto fornecido abaixo para o formato BDD (Behavior-Driven Developmen
    - Renumerar cenários sequencialmente (ex: Cenário 01, 02, 03) mesmo após adições/remoções.
 
 4. **Clareza:**
+
    - Evitar jargões técnicos no **Contexto**.
    - Usar verbos no infinitivo (ex: "selecionar", "visualizar").
+
+5. **Links Dinâmicos:**
+   - Caso o link contenha um número ou identificador dinâmico, substituí-lo por `@dynamic@`.
+     - Exemplo:  
+       `https://staging-academy-px.motoristapx.vercel.app/contracts/123/update`  
+       deve ser convertido para:  
+       `- Atualização de Contrato (@dynamic@): https://staging-academy-px.motoristapx.vercel.app/contracts/@dynamic@/update`
 
 ---
 
@@ -68,11 +76,12 @@ Converta o texto fornecido abaixo para o formato BDD (Behavior-Driven Developmen
 
 ### Links Relacionados
 
-**Base URL:** https://staging-academy-px.motoristapx.vercel.app  
+**Base URL:** https://staging-academy-px.motoristapx.vercel.app
 **Páginas:**
 
 - Criação de Contrato: https://staging-academy-px.motoristapx.vercel.app/contracts/new
 - Histórico de Contratos: https://staging-academy-px.motoristapx.vercel.app/contracts/history
+- Atualização de Contrato (@dynamic@): https://staging-academy-px.motoristapx.vercel.app/contracts/@dynamic@/update
 
 ### # Contexto
 
@@ -80,17 +89,17 @@ Garantir que motoristas concluam a integração pré-contrato antes de iniciar s
 
 ### História de Usuário
 
-**COMO** Administrador  
-**QUERO** forçar a liberação de um contrato sem integração concluída  
+**COMO** Administrador
+**QUERO** forçar a liberação de um contrato sem integração concluída
 **PARA** permitir início imediato do serviço em casos urgentes.
 
 ### Critérios de Aceitação
 
 #### Cenário 01 - Solicitar Liberação Forçada
 
-**DADO QUE** sou um Administrador autenticado  
-**QUANDO** acesso a página de detalhes do contrato  
-**ENTÃO** devo ver a opção "Forçar Liberação"  
+**DADO QUE** sou um Administrador autenticado
+**QUANDO** acesso a página de detalhes do contrato
+**ENTÃO** devo ver a opção "Forçar Liberação"
 **E** receber uma confirmação via e-mail.
 ```
 
