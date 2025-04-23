@@ -12,8 +12,8 @@ Converta o texto fornecido abaixo para o formato BDD (Behavior-Driven Developmen
 **Base URL:** [Inserir URL base da aplicação]  
 **Páginas:**
 
-- [Nome da Página 1]: [Base_url/URL_1]
-- [Nome da Página 2]: [Base_url/URL_2]
+- [Nome da Página 1] : [Base_url/URL_1]
+- [Nome da Página 2] : [Base_url/URL_2]
 
 ### # Contexto
 
@@ -38,34 +38,42 @@ Converta o texto fornecido abaixo para o formato BDD (Behavior-Driven Developmen
 
 ## Regras Obrigatórias:
 
-1. **Nomenclatura de Usuários:**
+1.  **Nomenclatura de Usuários:**
 
-   - `Estudante` = Usuário do painel da academia-px.
-   - `Administrador` = Usuário empresa do painel da academia-px.
-   - `Operador` = Usuário operador do painel do Nova/Laravel.
+    - `AcademiaPx-Student` = Usuário estudante do painel da academia-px.
+    - `AcademiaPx-Admin` = Usuário administrador (empresa) do painel da academia-px.
+    - `AcademiaPx-TowerOperator` = Usuário operador do painel da torre-academia.
+    - `TransportadoraPx-PanelUser` = Usuário do painel da transportadora.
+    - `TransportadoraPx-TowerOperator` = Usuário operador da torre-core.
+    - `MotoristaPx-Driver` = Usuário motorista utilizando o aplicativo.
 
-2. **Links:**
+2.  **Links:**
 
-   - Incluir sempre que relevante:
-     - Estudante/Administrador: `https://staging-academy-px.motoristapx.vercel.app`
-     - Operador: `https://academia-stg.px.center/nova`
-   - Adicionar URLs específicas de páginas sob a seção **Links Relacionados**.
+    - `AcademiaPx-Student`: `https://staging-academy-px.motoristapx.vercel.app`
+    - `AcademiaPx-Admin`: `https://staging-academy-px.motoristapx.vercel.app`
+    - `AcademiaPx-TowerOperator`: `https://academia-stg.px.center/nova`
+    - `TransportadoraPx-PanelUser`: `https://staging-px-painel.motoristapx.vercel.app`
+    - `TransportadoraPx-TowerOperator`: `https://staging.motoristapx.com.br/torrepx`
+    - `MotoristaPx-Driver`: (telas do aplicativo)
 
-3. **Ordenação de Cenários:**
+    - Incluir sempre que relevante
+    - Adicionar URLs específicas de páginas sob a seção **Links Relacionados**.
 
-   - Renumerar cenários sequencialmente (ex: Cenário 01, 02, 03) mesmo após adições/remoções.
+3.  **Ordenação de Cenários:**
 
-4. **Clareza:**
+    - Renumerar cenários sequencialmente (ex: Cenário 01, 02, 03) mesmo após adições/remoções.
 
-   - Evitar jargões técnicos no **Contexto**.
-   - Usar verbos no infinitivo (ex: "selecionar", "visualizar").
+4.  **Clareza:**
 
-5. **Links Dinâmicos:**
-   - Caso o link contenha um número ou identificador dinâmico, substituí-lo por `@dynamic@`.
-     - Exemplo:  
-       `https://staging-academy-px.motoristapx.vercel.app/contracts/123/update`  
-       deve ser convertido para:  
-       `- Atualização de Contrato (@dynamic@): https://staging-academy-px.motoristapx.vercel.app/contracts/@dynamic@/update`
+    - Evitar jargões técnicos no **Contexto**.
+    - Usar verbos no infinitivo (ex: "selecionar", "visualizar").
+
+5.  **Links Dinâmicos:**
+    - Caso o link contenha um número ou identificador dinâmico, substituí-lo por `@dynamic@`.
+      - Exemplo:  
+        `https://staging-academy-px.motoristapx.vercel.app/contracts/123/update`  
+        deve ser convertido para:  
+        `- Atualização de Contrato (@dynamic@): https://staging-academy-px.motoristapx.vercel.app/contracts/@dynamic@/update`
 
 ---
 
@@ -83,28 +91,42 @@ Converta o texto fornecido abaixo para o formato BDD (Behavior-Driven Developmen
 - Histórico de Contratos: https://staging-academy-px.motoristapx.vercel.app/contracts/history
 - Atualização de Contrato (@dynamic@): https://staging-academy-px.motoristapx.vercel.app/contracts/@dynamic@/update
 
-### # Contexto
+### Contexto
 
 Garantir que motoristas concluam a integração pré-contrato antes de iniciar serviços, com flexibilidade para liberação excepcional.
 
 ### História de Usuário
-
-**COMO** Administrador
-**QUERO** forçar a liberação de um contrato sem integração concluída
-**PARA** permitir início imediato do serviço em casos urgentes.
+**COMO** um MotoristaPx-Driver,
+**QUERO** me candidatar a um contrato com integração pré-contrato,
+**PARA** poder iniciar o serviço após concluir a integração.
 
 ### Critérios de Aceitação
 
-#### Cenário 01 - Solicitar Liberação Forçada
+#### Cenário 03 - Exibir Modal de Confirmação de Comprometimento
 
-**DADO QUE** sou um Administrador autenticado
-**QUANDO** acesso a página de detalhes do contrato
-**ENTÃO** devo ver a opção "Forçar Liberação"
-**E** receber uma confirmação via e-mail.
+**DADO QUE** estou na tela de detalhes do contrato,
+**QUANDO** clicar no botão "me candidatar",
+**ENTÃO** devo ver um modal de confirmação de comprometimento com a integração pré-contrato.
+
+#### Cenário 04 - Direcionar para Tela de Confirmação de Comprometimento
+
+**DADO QUE** confirmei meu comprometimento,
+**QUANDO** o contrato requer integração,
+**ENTÃO** devo estar candidatado para esse contrato que possui uma integração.
+
+#### Cenário 5 - Atualizar Status do Contrato e Liberar Botão "Iniciar Serviço"
+
+**DADO QUE** a motorista PX forçou a liberação do contrato,
+**QUANDO** o contrato for atualizado,
+**ENTÃO** o status do contrato deve refletir que a liberação foi forçada
+**E** o botão "iniciar serviço" deve estar liberado para o motorista, mesmo sem a conclusão da integração.
 ```
 
 ---
 
 **Texto para Conversão:**
+
+Projeto-Usuário: [Insira aqui o tipo de usuário]
+Para inserir o usuário, consulte a seção [## Regras Obrigatórias - Nomenclatura de Usuários](#regras-obrigatórias) .
 
 [Insira aqui o texto a ser convertido para BDD]
